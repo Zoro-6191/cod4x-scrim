@@ -1,4 +1,3 @@
-#include "q_shared.h"
 #include "cm_local.h"
 #include "qcommon.h"
 #include "cmd.h"
@@ -51,8 +50,6 @@ void CM_DebugPrintMaterialInfo()
     FS_Printf( f, "used content flags: 0x%08x\n", content);
     FS_Printf( f, "\n");
     FS_Printf( f, "-------------------------------------------------\n");
-
-
 }
 
 void CM_DebugCLeafBrushNodes()
@@ -88,7 +85,6 @@ void CM_DebugCBrush()
     FS_Printf( f, "-------------------------------------------------\n");
 }
 
-
 void CM_DebugCLeaf()
 {
     int i;
@@ -123,14 +119,10 @@ void CM_DebugSubModels()
     FS_Printf( f, "used content flags: 0x%08x\n", brushcontent);
     FS_Printf( f, "\n");
     FS_Printf( f, "-----------------------------------------------\n");
-
 }
-
-
 
 void CM_WalkAABB_Trees()
 {
-
     int i, j;
     CollisionAabbTree_t* tr;
     CollisionPartition_t* pat;
@@ -158,14 +150,9 @@ void CM_WalkAABB_Trees()
                 FS_Printf( f, "Vertex2: %g %g %g\n", cm.verts[vertset[1]][0], cm.verts[vertset[1]][1], cm.verts[vertset[1]][2]);
                 FS_Printf( f, "Vertex3: %g %g %g\n", cm.verts[vertset[2]][0], cm.verts[vertset[2]][1], cm.verts[vertset[2]][2]);
             }
-
         }
-
-
     }
-
 }
-
 
 void CM_DebugDoAll_f()
 {
@@ -186,25 +173,18 @@ void CM_DebugDoAll_f()
 
 }
 
-
 void CM_ReadBrushBsp_f()
 {
     unsigned int count;
     int i;
-
     struct dbrush_t* d = (struct dbrush_t*)Com_GetBspLump(8, 4, &count);
-
-
 
     for(i = 0; i < count; ++i)
     {
         Com_Printf(CON_CHANNEL_SYSTEM, "Mat: %d, numSides: %d\n", d->materialNum, d->numSides);
         ++d;
     }
-
-
 }
-
 
 void CM_DebugInit()
 {

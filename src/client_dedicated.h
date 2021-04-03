@@ -1,9 +1,8 @@
 #pragma once
 
-#include "q_shared.h"
-
 #ifdef __cplusplus
-extern "C"{
+extern "C"
+{
 #endif
 
 void __cdecl CL_AddDebugLine(const float *start, const float *end, const float *color, int depthTest, int duration);

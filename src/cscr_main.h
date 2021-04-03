@@ -4,7 +4,6 @@ extern "C"{
 
 qboolean __cdecl Scr_IsInOpcodeMemory(const char *pos);
 
-
 #ifdef __cplusplus
 };
 #endif

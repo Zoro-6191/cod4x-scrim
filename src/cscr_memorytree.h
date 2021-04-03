@@ -12,7 +12,6 @@ bool MT_Realloc(int oldNumBytes, int newNumbytes);
 };
 #endif
 
-
 byte* MT_GetRefByIndex(int index);
 int MT_GetIndexByRef(byte* p);
 void __cdecl MT_FreeIndex(unsigned int nodeNum, int numBytes);

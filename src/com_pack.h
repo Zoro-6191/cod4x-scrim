@@ -4,14 +4,14 @@
 
 union PackedUnitVec
 {
-  unsigned int packed;
-  char array[4];
+    unsigned int packed;
+    char array[4];
 };
 
 union PackedTexCoords
 {
-  unsigned int packed;
-  uint16_t w;
+    unsigned int packed;
+    uint16_t w;
 };
 
 #ifdef __cplusplus

@@ -1,31 +1,7 @@
-/*
-===========================================================================
-    Copyright (C) 2010-2013  Ninja and TheKelm
-    Copyright (C) 1999-2005 Id Software, Inc.
-
-    This file is part of CoD4X18-Server source code.
-
-    CoD4X18-Server source code is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation, either version 3 of the
-    License, or (at your option) any later version.
-
-    CoD4X18-Server source code is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>
-===========================================================================
-*/
-
-
 #ifndef __CVAR_H__
 #define __CVAR_H__
 
-#include "q_shared.h"
-#include "q_shared.h"
+// #include "q_shared.h"
 
 // nothing outside the Cvar_*() functions should modify these fields!
 
@@ -205,36 +181,6 @@ qboolean Cvar_IsDefined(const char* varname);
 #define Cvar_GetFloat Cvar_VariableValue
 #define Cvar_GetBool Cvar_VariableBooleanValue
 #define Dvar_InfoString(X,Y) Cvar_InfoString(Y)
-
-/*
-void __cdecl Cvar_SetInt(cvar_t const* var, int val);
-void __cdecl Cvar_SetBool(cvar_t const* var, qboolean val);
-void __cdecl Cvar_SetString(cvar_t const* var, char const* string);
-void __cdecl Cvar_SetFloat(cvar_t const* var, float val);
-void __cdecl Cvar_Set_f(void);
-void __cdecl Cvar_SetS_f(void);
-void __cdecl Cvar_Toggle_f(void);
-void __cdecl Cvar_TogglePrint_f(void);
-void __cdecl Cvar_SetA_f(void);
-void __cdecl Cvar_SetFromCvar_f(void);
-void __cdecl Cvar_SetFromLocalizedStr_f(void);
-void __cdecl Cvar_SetToTime_f(void);
-void __cdecl Cvar_Reset_f(void);
-void __cdecl Cvar_List_f(void);
-void __cdecl Cvar_Dump_f(void);
-void __cdecl Cvar_RegisterBool_f(void);
-void __cdecl Cvar_RegisterInt_f(void);
-void __cdecl Cvar_RegisterFloat_f(void);
-void __cdecl Cvar_SetU_f(void);
-int __cdecl g_cvar_valueforkey(char* key);
-char* __cdecl Cvar_InfoString(int unk, int bit);
-void __cdecl Cvar_ForEach(void (*callback)(cvar_t const*, void* passedhere), void* passback);
-char* __cdecl Cvar_DisplayableValue(cvar_t const*);
-char* __cdecl Cvar_GetVariantString(const char* name);
-cvar_t* __regparm1 Cvar_FindMalleableVar(const char* name);
-void Cvar_Init(void);
-*/
-
 
 //defines Cvarflags
 #define CVAR_TEMP		0

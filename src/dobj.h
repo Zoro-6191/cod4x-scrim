@@ -13,71 +13,69 @@
 
 typedef struct XBoneInfo
 {
-  float bounds[2][3];
-  float offset[3];
-  float radiusSquared;
+    float bounds[2][3];
+    float offset[3];
+    float radiusSquared;
 }XBoneInfo_t;
 
 
 typedef struct DObjAnimMat
 {
-  vec4_t quat;
-  vec3_t trans;
-  float transWeight;
+    vec4_t quat;
+    vec3_t trans;
+    float transWeight;
 }DObjAnimMat;
 
 
 typedef struct DObjSkeletonPartMatrix_s // Same as DObjAnimMat_t? Need confirmation!
 {
-	float p1[4];
-	float p2[4];
+    float p1[4];
+    float p2[4];
 }DObjSkeletonPartMatrix_t;
 
 
 typedef struct DSkelPartBits_s
 {
-	int anim[4];
-	int control[4];
-	int skel[4];
+    int anim[4];
+    int control[4];
+    int skel[4];
 } DSkelPartBits_t;
 
 
 typedef struct DSkel
 {
-	DSkelPartBits_t partBits;
-	int timeStamp;
-	DObjSkeletonPartMatrix_t *mat;
+    DSkelPartBits_t partBits;
+    int timeStamp;
+    DObjSkeletonPartMatrix_t *mat;
 } DSkel_t;
 
 
 typedef struct DObj_s
 {
-  struct XAnimTree_s *tree;
-  uint16_t duplicateParts;
-  uint16_t entnum;
-  char duplicatePartsSize;
-  char numModels;
-  char numBones;
-  byte pad;
-  unsigned int ignoreCollision;
-  volatile int locked;
-  struct DSkel skel;
-  float radius;
-  int hidePartBits[4];
-  struct XModel **models;
+    struct XAnimTree_s *tree;
+    uint16_t duplicateParts;
+    uint16_t entnum;
+    char duplicatePartsSize;
+    char numModels;
+    char numBones;
+    byte pad;
+    unsigned int ignoreCollision;
+    volatile int locked;
+    struct DSkel skel;
+    float radius;
+    int hidePartBits[4];
+    struct XModel **models;
 } DObj_t, DObj;
 
 struct DObjTrace_s
 {
-  float fraction;
-  int sflags;
-  vec3_t normal;
-  uint16_t modelIndex;
-  uint16_t partName;
-  uint16_t partGroup;
+    float fraction;
+    int sflags;
+    vec3_t normal;
+    uint16_t modelIndex;
+    uint16_t partName;
+    uint16_t partGroup;
 };
-
-
 
 #ifdef __cplusplus
 extern "C"{
@@ -131,5 +129,3 @@ extern uint16_t serverObjMap[1024];
 extern DObj_t objBuf[2048];
 
 #endif //__DOBJ_H__
-
-

@@ -1,6 +1,5 @@
 #pragma once
 #include "player.h"
-
 typedef enum BGEvent
 {
     EV_NONE = 0,

@@ -1,26 +1,3 @@
-/*
-===========================================================================
-    Copyright (C) 2010-2013  Ninja and TheKelm
-    Copyright (C) 1999-2005 Id Software, Inc.
-
-    This file is part of CoD4X18-Server source code.
-
-    CoD4X18-Server source code is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation, either version 3 of the
-    License, or (at your option) any later version.
-
-    CoD4X18-Server source code is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>
-===========================================================================
-*/
-
-
 #ifndef __CM_PUBLIC_H__
 #define __CM_PUBLIC_H__
 
@@ -28,7 +5,6 @@
 #define CLIPHANDLE_DEFINED
 typedef unsigned int clipHandle_t;
 #endif
-
 
 typedef enum
 {
@@ -39,82 +15,81 @@ typedef enum
   TRACE_HITTYPE_GLASS = 0x4
 }TraceHitType;
 
-
 typedef struct trace_s
 {
-  float fraction;
-  vec3_t normal;
-  int sflags;
-  int cflags;
-  const char *material;
-  TraceHitType hitType;
-  uint16_t hitId;
-  uint16_t modelIndex;
-  uint16_t partName;
-  uint16_t partGroup;
-  byte allsolid;
-  byte startsolid;
-  byte walkable;
-  byte padding;
+    float fraction;
+    vec3_t normal;
+    int sflags;
+    int cflags;
+    const char *material;
+    TraceHitType hitType;
+    uint16_t hitId;
+    uint16_t modelIndex;
+    uint16_t partName;
+    uint16_t partGroup;
+    byte allsolid;
+    byte startsolid;
+    byte walkable;
+    byte padding;
 }trace_t;
 
 typedef struct
 {
-  int baseEntity;
-  int parentEntity;
-  byte ignoreSelf;
-  byte ignoreParent;
-  byte ignoreSiblings;
-  byte ignoreChildren;
+    int baseEntity;
+    int parentEntity;
+    byte ignoreSelf;
+    byte ignoreParent;
+    byte ignoreSiblings;
+    byte ignoreChildren;
 }IgnoreEntParams;
 
 typedef struct 
 {
-	vec3_t start;
-	vec3_t end;
-	vec3_t invDelta;
+    vec3_t start;
+    vec3_t end;
+    vec3_t invDelta;
 }TraceExtents;
 
 struct sightclip_t
 {
-  vec3_t mins;
-  vec3_t maxs;
-  vec3_t outerSize;
-  vec3_t start;
-  vec3_t end;
-  int passEntityNum[2];
-  int contentmask;
+    vec3_t mins;
+    vec3_t maxs;
+    vec3_t outerSize;
+    vec3_t start;
+    vec3_t end;
+    int passEntityNum[2];
+    int contentmask;
 };
 
 
 struct sightpointtrace_t
 {
-  vec3_t start;
-  vec3_t end;
-  int passEntityNum[2];
-  int contentmask;
-  int locational;
-  char *priorityMap;
+    vec3_t start;
+    vec3_t end;
+    int passEntityNum[2];
+    int contentmask;
+    int locational;
+    char *priorityMap;
 };
 
 typedef struct pointtrace_t
 {
-  TraceExtents extents;
-  IgnoreEntParams *ignoreEntParams;
-  int contentmask;
-  int bLocational;
-  char *priorityMap;
+    TraceExtents extents;
+    IgnoreEntParams *ignoreEntParams;
+    int contentmask;
+    int bLocational;
+    char *priorityMap;
 } pointtrace_t;
 
-
-typedef struct moveclip_s{
-	vec3_t mins;	//0x00
-	vec3_t maxs;	//0x0c size of the moving object
-	vec3_t outerSize;
-	TraceExtents extents;
-	int passEntityNum;  //0x48
-	int passOwnerNum;   //0x4c
-	int contentmask;    //0x50
+typedef struct moveclip_s
+{
+    vec3_t mins;	//0x00
+    vec3_t maxs;	//0x0c size of the moving object
+    vec3_t outerSize;
+    TraceExtents extents;
+    int passEntityNum;  //0x48
+    int passOwnerNum;   //0x4c
+    int contentmask;    //0x50
 } moveclip_t;
 
 
@@ -173,6 +148,4 @@ void CM_Unload();
 }
 #endif
 
-
 #endif
-

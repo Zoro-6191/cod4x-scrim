@@ -1,4 +1,4 @@
-#include <stdint.h>
+// #include <stdint.h>
 
 unsigned long Crc32_ComputeBuf( unsigned long inCrc32, const void *buf, size_t bufLen );
 /// compute CRC32 (Slicing-by-16 algorithm)

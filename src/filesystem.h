@@ -1,27 +1,3 @@
-/*
-===========================================================================
-    Copyright (C) 2010-2013  Ninja and TheKelm
-    Copyright (C) 1999-2005 Id Software, Inc.
-
-    This file is part of CoD4X18-Server source code.
-
-    CoD4X18-Server source code is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation, either version 3 of the
-    License, or (at your option) any later version.
-
-    CoD4X18-Server source code is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>
-===========================================================================
-*/
-
-
-
 #ifndef __FILESYSTEM_H__
 #define __FILESYSTEM_H__
 
@@ -44,7 +20,6 @@
 // NOW defined in build files
 //#define PRE_RELEASE_TADEMO
 
-
 // referenced flags
 // these are in loop specific order so don't change the order
 #define FS_GENERAL_REF	0x01
@@ -59,13 +34,15 @@
 #define MAX_FILE_HANDLES 64
 
 
-typedef struct fileInPack_s {
+typedef struct fileInPack_s 
+{
 	unsigned long		pos;		// file info position in zip
 	char			*name;		// name of the file
 	struct	fileInPack_s*	next;		// next file in the hash
 } fileInPack_t;
 
-typedef struct {	//Verified
+typedef struct 
+{	//Verified
 	char			pakFilename[MAX_OSPATH];	// c:\quake3\baseq3\pak0.pk3
 	char			pakBasename[MAX_OSPATH];	// pak0
 	char			pakGamename[MAX_OSPATH];	// baseq3
@@ -80,12 +57,14 @@ typedef struct {	//Verified
 	fileInPack_t*	buildBuffer;				// buffer with the filenames etc. +0x320
 } pack_t;
 
-typedef struct {	//Verified
+typedef struct 
+{	//Verified
 	char		path[MAX_OSPATH];		// c:\quake3
 	char		gamedir[MAX_OSPATH];	// baseq3
 } directory_t;
 
-typedef struct searchpath_s {	//Verified
+typedef struct searchpath_s 
+{	//Verified
 	struct searchpath_s *next;
 	pack_t		*pack;		// only one of pack / dir will be non NULL
 	directory_t	*dir;
@@ -95,19 +74,21 @@ typedef struct searchpath_s {	//Verified
 	int		langIndex;
 } searchpath_t;
 
-typedef union qfile_gus {
+typedef union qfile_gus 
+{
 	FILE*		o;
 	unzFile	z;
 } qfile_gut;
 
-typedef struct qfile_us {
+typedef struct qfile_us 
+{
 	qfile_gut	file;
 	qboolean	unique;
 } qfile_ut;
 
 //Added manual buffering as the stdio file buffering has corrupted the written files
-
-typedef struct {
+typedef struct 
+{
 	qfile_ut	handleFiles;
 	qboolean	handleSync;
 	int		fileSize;
@@ -122,7 +103,6 @@ typedef struct {
 	int		rbufferPos; //next read position
 } fileHandleData_t; //0x11C (284) Size
 
-
 // TTimo - https://zerowing.idsoftware.com/bugzilla/show_bug.cgi?id=540
 // wether we did a reorder on the current search path when joining the server
 
@@ -133,8 +113,6 @@ FILE*		missingFiles = NULL;
 #endif
 
 #define FileWrapper_GetFileSize FS_fplength
-
-
 
 extern cvar_t*	fs_homepath;
 extern cvar_t*	fs_debug;
@@ -273,12 +251,3 @@ extern int header_localized_polish_iw00[2896];
 extern int header_localized_russian_iw00[2896];
 
 #endif
-
-
-
-
-
-
-
-
-

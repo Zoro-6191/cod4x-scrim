@@ -1,52 +1,49 @@
 #ifndef __CSCR_VARIABLE_H__
 #define __CSCR_VARIABLE_H__
 
-
-#include "scr_vm.h"
-
 typedef struct
 {
-  const char *fieldBuffer;
-  uint16_t canonicalStrCount;
-  byte developer;
-  byte developer_script;
-  byte evaluate;
-  byte pad[3];
-  const char *error_message;
-  int error_index;
-  unsigned int time;
-  unsigned int timeArrayId;
-  unsigned int pauseArrayId;
-  unsigned int levelId;
-  unsigned int gameId;
-  unsigned int animId;
-  unsigned int freeEntList;
-  unsigned int tempVariable;
-  byte bInited;
-  byte pad2;
-  uint16_t savecount;
-  unsigned int checksum;
-  unsigned int entId;
-  unsigned int entFieldName;
-  struct HunkUser *programHunkUser;
-  const char *programBuffer;
-  const char *endScriptBuffer;
-  const char *varUsagePos;
-  int totalObjectRefCount;
-  int numScriptValues;
-  int numScriptObjects;
-  int numScriptThreads;
-  int totalVectorRefCount;
+    const char *fieldBuffer;
+    uint16_t canonicalStrCount;
+    byte developer;
+    byte developer_script;
+    byte evaluate;
+    byte pad[3];
+    const char *error_message;
+    int error_index;
+    unsigned int time;
+    unsigned int timeArrayId;
+    unsigned int pauseArrayId;
+    unsigned int levelId;
+    unsigned int gameId;
+    unsigned int animId;
+    unsigned int freeEntList;
+    unsigned int tempVariable;
+    byte bInited;
+    byte pad2;
+    uint16_t savecount;
+    unsigned int checksum;
+    unsigned int entId;
+    unsigned int entFieldName;
+    struct HunkUser *programHunkUser;
+    const char *programBuffer;
+    const char *endScriptBuffer;
+    const char *varUsagePos;
+    int totalObjectRefCount;
+    int numScriptValues;
+    int numScriptObjects;
+    int numScriptThreads;
+    int totalVectorRefCount;
 }scrVarPub_t;
 
 extern scrVarPub_t gScrVarPub;
 
 struct __align(4) scrVarDebugPub_t
 {
-  const char **varUsage;
-  uint16_t *extRefCount;
-  int *leakCount;
-  bool dummy;
+    const char **varUsage;
+    uint16_t *extRefCount;
+    int *leakCount;
+    bool dummy;
 };
 
 extern struct scrVarDebugPub_t *gScrVarDebugPub;

@@ -1,7 +1,8 @@
 bool SL_IsDebugging();
 
 #ifdef __cplusplus
-extern "C"{
+extern "C"
+{
 #endif
 
 unsigned int __cdecl SL_GetStringForFloat(float f);
